@@ -117,6 +117,15 @@ export default function iicxery() {
                 </Link>
             </div><br></br>&nbsp;
             <Footer />
+        {/* Metadata
+        <meta
+        name="description"
+        content="Valentine Project for my girlfriend 💖 | Next.JS v15 + Tailwind CSS"
+        />
+        <meta property="og:image" content="https://valentine-project-eta.vercel.app/next-dot-js.svg" />
+        <meta name="keywords" content="valentine, nextjs, tailwindcss" />
+        */}
+        
         </>
     );
 }

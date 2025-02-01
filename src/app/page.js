@@ -32,6 +32,7 @@ export default function Home() {
           <div className="card-front">
             <i className="fas fa-heart heart-icon" />
             <div className="card-text">Happy Valentine's Day</div>
+            <div className="card-text">14 Febuary 2025 💖</div>
             <div className="click-hint">Click to open ❤️</div>
             <i className="fas fa-heart corner-decoration top-left" />
             <i className="fas fa-heart corner-decoration top-right" />
@@ -58,6 +59,5 @@ export default function Home() {
         <Footer />
       </div>
     </>
-    
   );
 }
