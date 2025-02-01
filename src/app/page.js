@@ -1,101 +1,63 @@
-import Image from "next/image";
+'use client';
+import React, { useState } from 'react';
+import Link from 'next/link';
+import Footer from "@/app/components/Footer";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [isFlipped, setIsFlipped] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const toggleCard = () => {
+    setIsFlipped(!isFlipped);
+  };
+  return (
+    <>
+      <link rel="icon" type="image/svg+xml" href="/next-dot-js.svg" />
+      <meta charSet="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>To Ice 💖</title>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      />
+      <link href="https://fonts.cdnfonts.com/css/segoe-ui-4" rel="stylesheet" />
+      <style
+        dangerouslySetInnerHTML={{
+          __html:
+            "* {margin: 0; padding: 0; box-sizing: border-box;} body {font-family: 'Kanit', sans-serif; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(90deg, rgba(255,112,112,1) 35%, rgba(255,0,221,1) 100%); padding: 20px; perspective: 1000px;} .card-container {width: 300px; height: 400px; position: relative; cursor: pointer; transform-style: preserve-3d; transition: transform 1s;} .card-container.opened {transform: rotateY(-180deg);} .card-front, .card-back {position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 20px; box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 100%); overflow: hidden;} .card-back {transform: rotateY(180deg); background: linear-gradient(135deg, #fff5f5 0%, #ffe9e9 100%);} .heart-icon {font-size: 4rem; color: #ff4d6d; animation: pulse 1.5s infinite; margin-bottom: 20px;} .card-text {text-align: center; color: #ff4d6d; font-size: 1.5rem; margin-bottom: 20px; font-weight: bold;} .click-hint {font-size: 0.9rem; color: #666; position: absolute; bottom: 20px; animation: bounce 2s infinite;} .hearts-decoration {position: absolute; width: 100%; height: 100%; pointer-events: none;} .mini-heart {position: absolute; font-size: 1rem; color: #ff4d6d; opacity: 0.5; animation: float 3s ease-in infinite;} @keyframes pulse {0% {transform: scale(1);} 50% {transform: scale(1.1);} 100% {transform: scale(1);}} @keyframes bounce {0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);}} @keyframes float {0% {transform: translateY(0) rotate(0deg);} 50% {transform: translateY(-20px) rotate(180deg);} 100% {transform: translateY(0) rotate(360deg);}} .message-content {text-align: center; max-width: 100%; transform: translateY(20px); opacity: 0; transition: all 0.5s ease-out;} .opened .card-back .message-content {transform: translateY(0); opacity: 1; transition-delay: 0.5s;} .message-title {font-size: 1.8rem; color: #ff4d6d; margin-bottom: 15px; font-weight: bold;} .message-body {font-size: 1rem; color: #666; line-height: 1.5; margin-bottom: 20px;} .love-signature {font-weight: bold; color: #ff4d6d; font-size: 1.2rem;} .corner-decoration {position: absolute; width: 50px; height: 50px; color: #ff4d6d; opacity: 0.3;} .top-left {top: 10px; left: 10px;} .top-right {top: 10px; right: 10px; transform: rotate(90deg);} .bottom-left {bottom: 10px; left: 10px; transform: rotate(-90deg);} .bottom-right {bottom: 10px; right: 10px; transform: rotate(180deg);} @media (max-width: 350px) {.card-container {width: 260px; height: 350px;} .message-title {font-size: 1.5rem;} .message-body {font-size: 0.9rem;}}",
+        }}
+      />
+      <div className="flex flex-col items-center justify-center min-h-screen">
+        {/* Card Container */}
+        <div className={`card-container ${isFlipped ? 'opened' : ''}`} onClick={toggleCard}>
+          <div className="card-front">
+            <i className="fas fa-heart heart-icon" />
+            <div className="card-text">Happy Valentine's Day</div>
+            <div className="click-hint">Click to open ❤️</div>
+            <i className="fas fa-heart corner-decoration top-left" />
+            <i className="fas fa-heart corner-decoration top-right" />
+            <i className="fas fa-heart corner-decoration bottom-left" />
+            <i className="fas fa-heart corner-decoration bottom-right" />
+          </div>
+          <div className="card-back">
+            <div className="message-content">
+              <h2 className="message-title">My Love</h2>
+              <p className="message-body">
+                สุขสันต์วันวาเลนไทน์นะคับเธออ เค้าโชคดีที่เธอเข้ามาในชีวิตเค้า เธอทำให้ชีวิตเค้ากลับมามีความสุขอีกครั้ง
+                เค้าอยากจะบอกเธอว่า เค้ารักเธอมากๆเลยนะ ไม่มีวันไหนที่เค้าไม่รักเธอเลย เค้าอยากให้เธออยู่กับเค้าไปนานๆเลยนะ 💖🌷
+              </p>
+              <div className="love-signature">8 Months 💖</div>
+            </div>
+            <div className="hearts-decoration" id="heartsContainer" />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* Link for Next Page */}
+        <Link className="mt-7 text-black text-lg hover:text-pink-600" href="/iicxery">
+        <i className="fa-duotone fa-solid fa-circle-arrow-right"></i> กดตรงนี้เพื่อไปหน้าต่อไป
+        </Link><br></br>&nbsp;<br></br>&nbsp;<br></br>&nbsp;<br></br>&nbsp;<br></br>&nbsp;<br></br>&nbsp;<br></br>&nbsp;
+        <Footer />
+      </div>
+    </>
+    
   );
 }
