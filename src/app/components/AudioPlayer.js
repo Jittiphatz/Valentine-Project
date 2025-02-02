@@ -6,14 +6,14 @@ import '@fontsource/kanit';
 export default function AudioPlayer() {
 
         const audioRef = useRef(null);
-        const [isPlaying, setIsPlaying] = useState(true); // เปลี่ยนค่าเริ่มต้นเป็น true เพื่อให้สอดคล้องกับ autoplay
+        const [isPlaying, setIsPlaying] = useState(true);
         const [currentTime, setCurrentTime] = useState(0);
         const [duration, setDuration] = useState(0);
     
-        // ใช้ useEffect เพื่อตั้งค่าความดังเมื่อ component โหลด
+        // ปรับค่า Volume
         useEffect(() => {
             if (audioRef.current) {
-                audioRef.current.volume = 0.5; // ตั้งความดังที่ 60%
+                audioRef.current.volume = 0.3; // ตั้งความดังที่ 60%
             }
         }, []);
     
@@ -38,8 +38,8 @@ export default function AudioPlayer() {
     
         const onLoadedMetadata = () => {
             setDuration(audioRef.current.duration);
-            audioRef.current.play(); // เริ่มเล่นเพลงทันทีเมื่อโหลดเสร็จ
-            setIsPlaying(true); // อัพเดทสถานะการเล่นให้ตรงกับ autoplay
+            audioRef.current.play();
+            setIsPlaying(true);
         };
     
         const formatTime = (time) => {
@@ -65,7 +65,7 @@ export default function AudioPlayer() {
             />
             <div className="controls">
                 <button onClick={togglePlayPause}>
-                    {isPlaying ? '⏸ Pause' : '▶ Play'} {/* ปุ่มจะแสดง Pause เมื่อเริ่มต้น */}
+                    {isPlaying ? '⏸ Pause' : '▶ Play'}
                 </button>
                 <div className="progress">
                     <span>Time : {formatTime(currentTime)}</span>

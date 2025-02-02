@@ -33,8 +33,6 @@ export default function iicxery() {
             src: "https://i.imgur.com/LsI5aLc.jpg",
             quote: "คาเฟ่แรกที่เค้าพาเธอไป | 28 January 2025"
         },
-
-        // Add more images and quotes as needed
     ];
 
     const openModal = (id) => {
@@ -47,8 +45,8 @@ export default function iicxery() {
 
     const closeModal = () => {
         setIsOpen(false);
-        setModalImageSrc(null); // Reset the image source when closing the modal
-        setModalQuote(''); // Reset the quote when closing the modal
+        setModalImageSrc(null);
+        setModalQuote('');
     };
 
 
@@ -57,6 +55,11 @@ export default function iicxery() {
         <>
             <link rel="icon" type="image/svg+xml" href="/next-dot-js.svg" />
             <meta charSet="UTF-8" />
+            <meta
+            name="description"
+            content="Our Gallery 💖 | Next.JS v15 + Tailwind CSS"
+            />
+            <meta property="og:image" content="https://img5.pic.in.th/file/secure-sv1/Screenshot-2025-02-02-231946.png" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>Luv Ice 😻</title>
             <link
@@ -71,8 +74,6 @@ export default function iicxery() {
                     `
                 }}
             />
-            {/* Floating Hearts Background */}
-            <div className="floating-hearts" id="heartsContainer" />
             {/* Header */}
             <header className="header">
                 <h1>
@@ -82,7 +83,7 @@ export default function iicxery() {
                     Timeline of love 💟
                 </p>
             </header>
-            {/* Gallery */}
+            {/* Images */}
             <div className="gallery">
                 {images.map((image, index) => (
                     <div className="gallery-item" key={index} onClick={() => openModal(index)}>
@@ -93,39 +94,13 @@ export default function iicxery() {
                     </div>
                 ))}
             </div>
-            {/* Modal */}
-            {isOpen && (
-                <div className="modal" id="imageModal" onClick={closeModal}>
-                    <div className="modal-content">
-                        <span className="close-modal" onClick={closeModal}>×</span>
-                        <img
-                            className="modal-image"
-                            id="modalImage"
-                            src={modalImageSrc || undefined} // Use undefined to avoid empty string
-                            alt="Full size image"
-                        />
-                        <p className="modal-quote">{modalQuote}</p>
-                    </div>
-                </div>
-            )}
-
             <AudioPlayer />
-
             <div className="flex items-center justify-center">
                 <Link className="my-8 text-black text-lg hover:text-blue-600" href="/">
                     <i className="fa-solid fa-house"></i> Back to Home
                 </Link>
             </div><br></br>&nbsp;
             <Footer />
-        {/* Metadata
-        <meta
-        name="description"
-        content="Valentine Project for my girlfriend 💖 | Next.JS v15 + Tailwind CSS"
-        />
-        <meta property="og:image" content="https://valentine-project-eta.vercel.app/next-dot-js.svg" />
-        <meta name="keywords" content="valentine, nextjs, tailwindcss" />
-        */}
-        
         </>
     );
 }
