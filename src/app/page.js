@@ -19,7 +19,6 @@ export default function Home() {
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       />
-      <link href="https://fonts.cdnfonts.com/css/segoe-ui-4" rel="stylesheet" />
       <style
         dangerouslySetInnerHTML={{
           __html:

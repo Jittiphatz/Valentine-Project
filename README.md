@@ -1,3 +1,32 @@
+## Valentine's Day website for my girlfriend!💖
+- This project use <a href="https://bun.sh/">Bun.js</a> and JavaScript😊
+
+- [Original Code (HTML)](https://github.com/goragodwiriya/valentine)
+
+# 🌐 Local Developement
+- Install dependencies
+```bash
+bun install
+```
+- Build Project
+```bash
+bun run build
+```
+- Start project
+```bash
+bun run start
+# or
+bun run dev # (for run dev)
+```
+# Pages
+- [Note](https://iicxery.jittiphat.site)
+- [Gallery](https://iicxery.jittiphat.site/iicxery)
+
+# Next.JS v15.2 Canary + Tailwind CSS
+
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
