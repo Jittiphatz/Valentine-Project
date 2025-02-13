@@ -18,7 +18,7 @@ bun run start
 # or
 bun run dev # (for run dev)
 ```
-# Pages
+# 💾 Pages
 - [Note](https://iicxery.jittiphat.site)
 - [Gallery](https://iicxery.jittiphat.site/iicxery)
 
